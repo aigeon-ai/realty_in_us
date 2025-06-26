@@ -2,68 +2,62 @@
 
 ## Project Overview
 
-**Aigeon AI Realty in US** is a Python-based server application designed to interact with the Realty in US API, providing a comprehensive set of tools for accessing real estate data in the United States. This application leverages the FastMCP framework to offer a suite of functionalities that facilitate property searches, detailed property information retrieval, and various real estate data analytics.
+Aigeon AI Realty in US is a Python-based server application designed to interact with the Realty in US API. This application provides a suite of tools to facilitate real estate data retrieval, including property listings, auto-complete suggestions for locations, detailed property information, and more. It is built using the FastMCP framework, which simplifies the creation and management of API tools.
 
 ## Features Overview
 
-This project provides a robust interface to interact with real estate data through the Realty in US API. Key features include:
+This server application offers a comprehensive set of features for accessing and managing real estate data in the United States. Key functionalities include:
 
-- Auto-complete suggestions for locations and addresses.
-- Comprehensive property listings with filtering options.
-- Detailed property information retrieval.
-- Similar property suggestions.
-- Commute time calculations to specified destinations.
-- Surroundings data for properties.
-- Access to property photos and other media.
+- Auto-complete suggestions for locations such as states, cities, districts, and addresses.
+- Retrieval of property listings for sale, rent, or sold properties.
+- Access to detailed property information, including photos and surroundings.
+- Calculation of commute times to specific locations.
+- Listing of similar homes based on a given property.
 
 ## Main Features and Functionality
 
 1. **Auto-Complete Suggestions**: 
-   - Retrieve suggestions for states, cities, districts, addresses, and zip codes to assist in property searches.
+   - Provides suggestions for locations based on partial inputs, helping users find cities, districts, and specific addresses efficiently.
 
-2. **Property Listings**:
-   - Access lists of properties for sale, rent, or sold, with options to filter results based on various criteria.
+2. **Property Listings**: 
+   - Lists properties available for sale, rent, or that have been sold, with options for filtering and pagination.
 
-3. **Property Details**:
-   - Obtain detailed information about specific properties, including new home value features.
+3. **Property Details**: 
+   - Retrieves detailed information about specific properties, including new home value features and associated photos.
 
-4. **Similar Homes**:
-   - Find properties similar to a specified property, based on various criteria.
+4. **Commute Time Calculation**: 
+   - Calculates the estimated commute time to a destination, considering different modes of transportation and traffic conditions.
 
-5. **Commute Time Calculation**:
-   - Calculate the commute time from a property to a specified destination using different modes of transportation.
+5. **Surroundings Information**: 
+   - Provides data about the surroundings of a property, including optional flood information.
 
-6. **Surroundings Data**:
-   - Retrieve data about the surroundings of a property, including optional flood information.
+## Main Functions Description
 
-7. **Property Photos**:
-   - Access and retrieve photos of properties.
+- **v2_auto_complete**: 
+  - Fetches auto-complete suggestions for locations based on user input. It supports optional pagination through a limit parameter.
 
-## API Endpoints or Main Functions Description
+- **locations_auto_complete**: 
+  - Similar to `v2_auto_complete`, this function provides location suggestions but is tailored for different endpoints.
 
-The application provides several key functions, each corresponding to an API endpoint:
+- **v3_list**: 
+  - Lists properties for sale, rent, or sold. It allows users to apply various filters to refine their search.
 
-- **`v2_auto_complete`**: Provides auto-complete suggestions for locations and addresses.
-- **`locations_auto_complete`**: Similar to `v2_auto_complete`, but specifically for location names.
-- **`v3_list`**: Lists properties for sale, rent, or sold, with options for filtering.
-- **`v3_list_similar_homes`**: Lists homes similar to a specified property.
-- **`v3_detail`**: Retrieves detailed information about a property.
-- **`v3_get_photos`**: Retrieves photos of a specified property.
-- **`v3_get_commute_time`**: Calculates commute time to a specified destination.
-- **`v3_get_surroundings`**: Retrieves surroundings data for a property.
-- **`properties_list_sold`**: Lists properties that have been sold in a specified city and state.
+- **v3_list_similar_homes**: 
+  - Returns a list of homes similar to a specified property, with options to filter by status and limit the number of results.
 
-## Configuration Parameters Explanation
+- **v3_detail**: 
+  - Retrieves detailed information about a specific property, including optional listing details.
 
-Each function in the application accepts specific parameters that configure the request to the Realty in US API:
+- **v3_get_photos**: 
+  - Obtains photos associated with a particular property, enhancing the visual understanding of the property.
 
-- **`input`**: A string input for location or address suggestions.
-- **`limit`**: An integer or float specifying the number of items per response for paging purposes.
-- **`property_id`**: A unique identifier for a property, used in various functions to specify the target property.
-- **`listing_id`**: An optional identifier for a property listing.
-- **`destination_address`**: The address used to calculate commute times.
-- **`transportation_type`**: Specifies the mode of transportation for commute time calculations.
-- **`with_traffic`**: A boolean indicating whether to include traffic conditions in commute time calculations.
-- **`enable_flood`**: A boolean indicating whether to include flood information in surroundings data.
+- **v3_get_commute_time**: 
+  - Calculates the commute time to a specified address, considering different transportation types and traffic conditions.
 
-This application is designed to provide a seamless interface for accessing and analyzing real estate data, making it an invaluable tool for real estate professionals and enthusiasts alike.
+- **v3_get_surroundings**: 
+  - Provides information about the surroundings of a property, with an option to include flood data.
+
+- **properties_list_sold**: 
+  - Lists properties that have been sold in a specified city or state, allowing users to analyze past real estate transactions.
+
+This application leverages the capabilities of the Realty in US API to deliver a robust toolset for real estate data management, making it an invaluable resource for developers and businesses in the real estate sector.
